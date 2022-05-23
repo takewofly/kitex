@@ -47,6 +47,7 @@ func NewThriftCodec() remote.PayloadCodec {
 }
 
 // NewThriftFrugalCodec creates the thrift binary codec powered by frugal.
+// Eg: xxxservice.NewServer(handler, server.WithPayloadCodec(thrift.NewThriftCodecWithConfig(thrift.CodecConfig{true, true, true, true})))
 func NewThriftCodecWithConfig(c CodecConfig) remote.PayloadCodec {
 	return &thriftCodec{c}
 }
